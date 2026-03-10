@@ -12,10 +12,10 @@ from torch.utils.tensorboard import SummaryWriter
 from torch.cuda.amp import autocast, GradScaler
 from tqdm import tqdm
 
-from .config import TrainingConfig
-from ..models.colorization_net import ColorizationNet
-from ..models.losses import SimplifiedColorLoss, PerceptualLoss
-from ..evaluation.metrics import calculate_psnr, calculate_ssim
+from training.config import TrainingConfig
+from models.colorization_net import ColorizationNet
+from models.losses import SimplifiedColorLoss, PerceptualLoss
+from evaluation.metrics import calculate_psnr, calculate_ssim
 
 
 class Trainer:

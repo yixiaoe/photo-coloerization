@@ -9,7 +9,7 @@ from torch.utils.data import Dataset
 from PIL import Image
 import numpy as np
 from torchvision import transforms
-from .preprocess import rgb_to_lab, normalize_lab, split_lab_channels
+from data.preprocess import rgb_to_lab, normalize_lab, split_lab_channels
 
 
 class ColorizationDataset(Dataset):

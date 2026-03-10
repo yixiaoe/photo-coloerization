@@ -1,6 +1,6 @@
 """模型定义模块"""
 
-from .colorization_net import ColorizationNet
-from .losses import ColorRebalancedLoss
+from models.colorization_net import ColorizationNet
+from models.losses import ColorRebalancedLoss
 
 __all__ = ['ColorizationNet', 'ColorRebalancedLoss']

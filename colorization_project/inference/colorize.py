@@ -10,7 +10,7 @@ from PIL import Image
 from skimage import color
 from torchvision import transforms
 
-from ..models.colorization_net import ColorizationNet
+from models.colorization_net import ColorizationNet
 
 
 def load_model(checkpoint_path, device='cuda', num_classes=313):

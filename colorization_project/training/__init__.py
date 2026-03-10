@@ -1,6 +1,6 @@
 """训练模块"""
 
-from .trainer import Trainer
-from .config import TrainingConfig
+from training.trainer import Trainer
+from training.config import TrainingConfig
 
 __all__ = ['Trainer', 'TrainingConfig']
