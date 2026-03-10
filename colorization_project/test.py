@@ -9,10 +9,10 @@ import torch
 from torch.utils.data import DataLoader
 from tqdm import tqdm
 
-from colorization_project.data.dataset import COCOColorizationDataset, ImageNetColorizationDataset
-from colorization_project.models.colorization_net import ColorizationNet
-from colorization_project.evaluation.metrics import calculate_psnr, calculate_ssim, calculate_l2_distance
-from colorization_project.evaluation.visualize import visualize_batch
+from data.dataset import COCOColorizationDataset, ImageNetColorizationDataset
+from models.colorization_net import ColorizationNet
+from evaluation.metrics import calculate_psnr, calculate_ssim, calculate_l2_distance
+from evaluation.visualize import visualize_batch
 
 
 def main():

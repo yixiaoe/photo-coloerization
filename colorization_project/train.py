@@ -8,9 +8,9 @@ import random
 import numpy as np
 import torch
 
-from colorization_project.data.dataset import COCOColorizationDataset, ImageNetColorizationDataset
-from colorization_project.training.config import TrainingConfig
-from colorization_project.training.trainer import Trainer
+from data.dataset import COCOColorizationDataset, ImageNetColorizationDataset
+from training.config import TrainingConfig
+from training.trainer import Trainer
 
 
 def set_seed(seed):
