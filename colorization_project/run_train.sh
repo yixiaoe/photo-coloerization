@@ -20,11 +20,18 @@ if [ ! -f "train.py" ]; then
     exit 1
 fi
 
-# 检查数据集
-if [ ! -d "../datasets/coco/train2017" ]; then
+# 检查数据集（支持多个位置）
+DATA_ROOT=""
+
+if [ -d ~/autodl-tmp/datasets/coco/train2017 ]; then
+    DATA_ROOT=~/autodl-tmp/datasets
+    echo "使用 AutoDL 数据集: $DATA_ROOT"
+elif [ -d ../datasets/coco/train2017 ]; then
+    DATA_ROOT=../datasets
+    echo "使用本地数据集: $DATA_ROOT"
+else
     echo -e "${RED}错误：未找到 COCO 数据集${NC}"
-    echo "请先下载数据集："
-    echo "  python -m data.download_data --dataset coco --data_root ../datasets"
+    echo "请运行: bash prepare_autodl_data.sh"
     exit 1
 fi
 
@@ -81,13 +88,14 @@ LOG_FILE="train_${TIMESTAMP}.log"
 
 # 运行训练
 python train.py \
+    --data_root $DATA_ROOT \
     --dataset $DATASET \
     --batch_size $BATCH_SIZE \
     --num_epochs $NUM_EPOCHS \
     --lr $LEARNING_RATE \
     $USE_AMP \
-    --checkpoint_dir ../checkpoints \
-    --log_dir ../outputs/logs \
+    --checkpoint_dir ~/checkpoints \
+    --log_dir ~/outputs/logs \
     2>&1 | tee $LOG_FILE
 
 echo ""
